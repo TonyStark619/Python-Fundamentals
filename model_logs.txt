@@ -1,0 +1,3 @@
+AI Model: VisionPro_v1
+Epoch 1: Accuracy 0.85
+Epoch 2: Accuracy 0.89
