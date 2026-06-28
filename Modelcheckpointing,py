@@ -1,0 +1,39 @@
+# Phase 2, Day 20: Persisting AI Intelligence (State Dicts)
+import torch
+import torch.nn as nn
+import os
+
+print("--- Booting AI Checkpoint Protocol ---")
+
+# 1. Define the exact architecture of the brain
+class PlacementPredictor(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Linear(in_features=2, out_features=1)
+    
+    def forward(self, x):
+        return self.layer(x)
+
+# Initialize a fresh model (This would normally be trained first)
+ai_model = PlacementPredictor()
+FILE_PATH = "model_brain.pth"
+
+print("Simulating training completion...")
+
+# 2. Saving the Model Intelligence
+# We extract the state_dict (the mathematical weights) and save it to the disk
+torch.save(ai_model.state_dict(), FILE_PATH)
+print(f"Status: Neural weights successfully saved to {FILE_PATH}.")
+
+print("\n--- Verifying Restoration Protocol ---")
+
+# 3. Loading the Model Intelligence
+# We create a brand new, empty, "ignorant" brain
+restored_model = PlacementPredictor()
+
+# We inject the saved intelligence from the hard drive back into the empty brain
+restored_model.load_state_dict(torch.load(FILE_PATH))
+restored_model.eval() # Locks the brain into "inference mode" (no more learning)
+
+print("Status: Intelligence successfully restored from disk.")
+print("The AI is completely decoupled from the training script and ready for deployment.")
