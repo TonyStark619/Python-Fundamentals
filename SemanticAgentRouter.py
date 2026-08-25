@@ -66,4 +66,4 @@ router.route_query("Find all users in the production database who logged in toda
 router.route_query("What's the temperature going to be in Bhopal tomorrow?")
 router.route_query("Hey there, how are you doing today?")
 
-print("\nStatus: Semantic routing active. Deterministic payload distribution achieved at minimal latency.")
+print("\nStatus: Semantic routing active. Deterministic payload distribution is achieved at minimal latency.")
